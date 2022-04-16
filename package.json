@@ -1,0 +1,15 @@
+{
+  "name": "web3-erc721-view-tokens",
+  "version": "1.0.0",
+  "description": "View erc721 token images from ipfs within dapp by provding contract address and token id.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SpaceCityCowboy88",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.3"
+  }
+}

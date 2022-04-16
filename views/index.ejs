@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <script 
+        src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js" 
+        integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+</head>
+<body>
+    <div id="gradient" />
+
+    <div class="container d-flex flex-column" style="padding-top: 15px;">
+        <div class="row d-xxl-flex" style="position: relative; top: 0px; width: 100%;padding-bottom: 30px;">
+            <div class="col d-flex d-xxl-flex justify-content-end justify-content-xxl-end"><button class="btn btn-primary" type="button" onclick="loadWeb3(false)" id="connectBtn">Connect Wallet</button></div>
+        </div>
+    </div>
+    <div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row d-lg-flex justify-content-lg-center align-items-lg-center" style="padding: 12px;">
+            <div class="col">
+                <video id="NftVideo" style="display: none; max-width: 350px; max-height: 350px;" controls loop>
+                    <source id="NftVidSrc" src="" type="video/mp4">
+                </video>
+                
+                <img id="NftImage" class="img-fluid" src="https://via.placeholder.com/350x350" style="display: none; max-width: 350px; max-height: 350px;"></div>
+        </div>
+        <div class="row d-lg-flex justify-content-lg-center align-items-lg-center" style="padding: 12px;">
+            <div class="col" style="text-align: center;">
+                <a id="IpfsLink" href="" target="_blank" style="font-size: 10.4px;"></a>
+            </div>
+        </div>
+        <div class="row d-lg-flex justify-content-lg-center align-items-lg-center" style="padding: 12px;">
+            <div class="col" style="text-align: center;">
+                <h1 style="font-size: 10.4px;">Enter Contract Address:</h1><input id="contractAdd" type="text">
+            </div>
+        </div>
+        <div class="row d-lg-flex justify-content-lg-center align-items-lg-center" style="padding: 12px;padding-top: 0px;">
+            <div class="col" style="text-align: center;">
+                <h1 style="font-size: 10.4px;">Token ID #:</h1><input id="token" type="text">
+            </div>
+        </div>
+        <div class="row d-lg-flex justify-content-lg-center align-items-lg-center">
+            <div class="col"><button class="btn btn-primary" type="button" onclick="getToken()">submit</button></div>
+        </div>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/javascript/main.js"></script>
+
+    <script type="text/javascript">
+        window.onload = async function(){
+            await sleep(100)
+            try{
+                if(window.ethereum._state.accounts.length > 0){
+                    loadWeb3(true)
+                }
+            }catch(e){
+                console.error(e)
+            }
+        };
+    </script>
+
+</body>
+</html>
